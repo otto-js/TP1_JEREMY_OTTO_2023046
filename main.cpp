@@ -17,7 +17,7 @@ int main(int argc, const char * argv[]) {
 
 
 
-std::cout << "modification pour vérification connection git remote" << std::endl;
+std::cout << "Ceci est la modification 2" << std::endl;
 
 
 
