@@ -12,10 +12,18 @@
 #include <stdio.h>
 #include "employe.hpp"
 
-class Ponctuel {
+class Ponctuel : public Employe
+{
 
+	private :
+		double montantUnique;
 
-
+	public :
+		Ponctuel(string nom, int matricule, double montantUnique);
+		
+		virtual ~Ponctuel();
+		
+		void calculerSalaire();
 
 };
 

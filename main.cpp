@@ -15,14 +15,10 @@
 
 int main(int argc, const char * argv[]) {
 
+	//les employés sont créés dynamiquement
+	//ils sont conservés dans un tableau de POINTEURS de 250 cases
 
-
-std::cout << "modification changement branche" << std::endl;
-
-
-
-
-
+	//Faire un système de menu 
 
 
 	return 0;

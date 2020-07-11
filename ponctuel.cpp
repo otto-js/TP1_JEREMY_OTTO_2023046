@@ -7,3 +7,19 @@
 //
 
 #include "ponctuel.hpp"
+
+	Ponctuel::Ponctuel(string nom, int matricule, double montantUnique) : Employe(nom, matricule)
+	{
+		this->montantUnique = montantUnique;
+	}
+	
+	Ponctuel::~Ponctuel()
+	{
+		
+	}
+	
+	//implémenter la méthode calculerSalaire pour Syndique
+	void calculerSalaire()
+	{
+		
+	}

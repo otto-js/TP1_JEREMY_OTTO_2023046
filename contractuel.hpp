@@ -12,10 +12,19 @@
 #include <stdio.h>
 #include "employe.hpp"
 
-class Contractuel {
+class Contractuel : public Employe
+{
 
+	private :
+		int montantFixe,
+			nbreSemaines;
 
-
+	public :
+		Contractuel(string nom, int matricule, int montantFixe, int nbreSemaines);
+		
+		virtual ~Contractuel();
+		
+		void calculerSalaire();
 
 };
 

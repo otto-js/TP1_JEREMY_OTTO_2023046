@@ -7,3 +7,20 @@
 //
 
 #include "contractuel.hpp"
+
+	Contractuel::Contractuel(string nom, int matricule, int montantFixe, int nbreSemaines) : Employe(nom, matricule)
+	{
+		this->montantFixe = montantFixe;
+		this->nbreSemaines = nbreSemaines;
+	}
+
+	Contractuel::~Contractuel()
+	{
+	
+	}
+	
+			//implémenter la méthode calculerSalaire pour Syndique
+		void calculerSalaire()
+		{
+		
+		}

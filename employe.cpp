@@ -7,3 +7,15 @@
 //
 
 #include "employe.hpp"
+
+
+	Employe::Employe(string nom, int matricule)
+	{
+		this->nom = nom;
+		this->matricule = matricule;
+	}
+	
+	Employe::~Employe()
+	{
+		
+	}
