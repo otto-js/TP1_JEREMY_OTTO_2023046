@@ -15,13 +15,12 @@
 
 int main(int argc, const char * argv[]) {
 
-
-
-std::cout << "Ceci est la modification 2" << std::endl;
-
+	//les employés sont créés dynamiquement
+	//ils sont conservés dans un tableau de POINTEURS de 250 cases
 
 
 
+	//Faire un système de menu 
 
 
 

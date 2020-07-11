@@ -15,8 +15,17 @@
 class Syndique : public Employe
 {
 
+	private :
+		double salaireHoraire,
+				heuresTravaillees;
+	
+	public :
+		Syndique(string nom, int matricule, double salaireHoraire, double heuresTravaillees);
+		
+		virtual ~Syndique();
 
-
+//Voir les paramètres nécessaires
+		void calculerSalaire();
 
 };
 

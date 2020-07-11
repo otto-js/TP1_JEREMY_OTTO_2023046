@@ -10,10 +10,23 @@
 #define __EMPLOYE_HPP__
 
 #include <stdio.h>
+#include <string>
+
+using namespace std;
 
 class Employe {
 
+	protected :
+		string nom;
+		int matricule; //doit être compris entre 10 000 et 99 999 -- comment on fait ça?
+		
+	public :
+	
+		Employe(string nom, int matricule);
+		
+		virtual ~Employe();
 
+	virtual void calculerSalaire() = 0;
 
 
 };
