@@ -24,7 +24,7 @@ class Contractuel : public Employe
 		
 		virtual ~Contractuel();
 		
-		void calculerSalaire();
+		double calculerSalaire();
 
 };
 

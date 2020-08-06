@@ -7,9 +7,10 @@
 //
 
 #include <string>
+#include <iostream>
 #include "syndique.hpp"
 
-using namespace std;
+
 
 
 		Syndique::Syndique(string nom, int matricule, double salaireHoraire, double heuresTravaillees) : Employe(nom, matricule)
@@ -20,11 +21,13 @@ using namespace std;
 		
 		Syndique::~Syndique()
 		{
-			
+			std::cout << "Syndiqué effacé" << std::endl;
 		}
 		
 		//implémenter la méthode calculerSalaire pour Syndique
-		void calculerSalaire()
+		double Syndique::calculerSalaire()
 		{
-		
+		//employé payé à l'heure
+		//paie pour une semaine définie par un taux horaire et un nombre d'heure travaillées pendant la dernière semaine
+		return this->salaireHoraire * this->heuresTravaillees;
 		}

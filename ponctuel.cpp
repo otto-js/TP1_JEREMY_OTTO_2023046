@@ -7,6 +7,8 @@
 //
 
 #include "ponctuel.hpp"
+#include <iostream>
+
 
 	Ponctuel::Ponctuel(string nom, int matricule, double montantUnique) : Employe(nom, matricule)
 	{
@@ -15,11 +17,11 @@
 	
 	Ponctuel::~Ponctuel()
 	{
-		
+		std::cout << "Ponctuel effacé" << std::endl;
 	}
 	
 	//implémenter la méthode calculerSalaire pour Syndique
-	void calculerSalaire()
+	double Ponctuel::calculerSalaire()
 	{
-		
+		return montantUnique;
 	}

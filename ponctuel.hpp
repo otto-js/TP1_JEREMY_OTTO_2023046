@@ -23,7 +23,7 @@ class Ponctuel : public Employe
 		
 		virtual ~Ponctuel();
 		
-		void calculerSalaire();
+		double calculerSalaire();
 
 };
 

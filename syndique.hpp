@@ -24,8 +24,7 @@ class Syndique : public Employe
 		
 		virtual ~Syndique();
 
-//Voir les paramètres nécessaires
-		void calculerSalaire();
+		double calculerSalaire();
 
 };
 
