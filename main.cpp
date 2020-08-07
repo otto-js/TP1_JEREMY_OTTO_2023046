@@ -14,7 +14,7 @@
 #include "taxes.hpp"
 #include "menu.hpp"
 
-
+void afficheTableauPleinMessage();
 
 int main(int argc, const char * argv[]) {
 
@@ -41,7 +41,7 @@ int main(int argc, const char * argv[]) {
 						compteur++;
 					}
 					else
-						std::cout << "Plus de place disponible dans le tableau" << std::endl;
+						afficheTableauPleinMessage();
 					break;
 			
 			case 2 :
@@ -51,7 +51,7 @@ int main(int argc, const char * argv[]) {
 						compteur++;
 					}
 					else
-						std::cout << "Plus de place disponible dans le tableau" << std::endl;
+						afficheTableauPleinMessage();
 					break;
 			
 			case 3 :
@@ -61,7 +61,7 @@ int main(int argc, const char * argv[]) {
 						compteur++;
 					}
 					else
-						std::cout << "Plus de place disponible dans le tableau" << std::endl;
+						afficheTableauPleinMessage();
 					break;
 			
 			case 4 :
@@ -80,6 +80,10 @@ int main(int argc, const char * argv[]) {
 		delete employes[i];
 
 	return 0;
+}
+
+void afficheTableauPleinMessage() {
+	std::cout << "Limtite d'espace disponible dans le tableau atteinte" << std::endl;
 }
 
 
