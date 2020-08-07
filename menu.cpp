@@ -13,7 +13,7 @@ void monMenu::afficheMenu(){
 	std::cout << "1. Ajouter un employé syndiqué" << std::endl;
 	std::cout << "2. Ajouter un employé contractuel" << std::endl;
 	std::cout << "3. Ajouter un employé ponctuel" << std::endl;
-	std::cout << "4. Afficher la paye des employés" << std::endl;
+	std::cout << "4. Afficher la paie des employés" << std::endl;
 	std::cout << "5. Quitter" << std::endl;
 	std::cout << "\tVotre choix : ";
 }
