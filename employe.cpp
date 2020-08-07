@@ -16,9 +16,7 @@
 		this->matricule = matricule;
 	}
 	
-	Employe::~Employe(){
-		
-	}
+	Employe::~Employe(){}
 	
 	string Employe::getNom() { return this->nom;}
 	

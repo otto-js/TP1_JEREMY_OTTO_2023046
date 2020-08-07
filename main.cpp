@@ -37,9 +37,13 @@ int main(int argc, const char * argv[]) {
 		switch (choix)
 		{
 			case 1 :
-					monMenu::lireInfosSyndique(nom,  matricule,  salaire,  tempsTravaille);
-					employes[compteur] = new Syndique(nom, matricule, salaire, tempsTravaille);
-					compteur++;
+					if (compteur < 250 ){
+						monMenu::lireInfosSyndique(nom,  matricule,  salaire,  tempsTravaille);
+						employes[compteur] = new Syndique(nom, matricule, salaire, tempsTravaille);
+						compteur++;
+					}
+					else
+						std::cout << "Plus de place disponible dans le tableau" << std::endl;
 			break;
 			case 2 :
 					monMenu::lireInfosContractuel(nom, matricule, salaire, tempsTravaille);

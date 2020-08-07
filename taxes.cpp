@@ -16,7 +16,7 @@ const double Taxes::TVQ = 0.15;
 double Taxes::calculeTPS(double montantATaxer) {
 	return montantATaxer * TPS;
 }
-
 double Taxes::calculeTVQ(double montantATaxer) {
 	return montantATaxer * TVQ;
 }
+//ces deux méthodes performent le même calcul mais sont séparées pour anticiper une modification des taux des taxes fédérales et provinciales
