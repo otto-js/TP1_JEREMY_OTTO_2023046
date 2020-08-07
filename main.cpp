@@ -12,11 +12,11 @@
 #include "contractuel.hpp"
 #include "ponctuel.hpp"
 #include "taxes.hpp"
-#include "nouvelemploye.hpp"
+#include "menu.hpp"
 
 
-private void afficheMenu();
-
+void afficheMenu();
+void afficherEmployesInfos(Employe* employes[], int compteur);
 
 int main(int argc, const char * argv[]) {
 
@@ -37,22 +37,22 @@ int main(int argc, const char * argv[]) {
 		switch (choix)
 		{
 			case 1 :
-					nouvelEmploye::lireInfosSyndique(nom,  matricule,  salaire,  tempsTravaille);
-					nouvelEmploye::ajouterSyndique(employes, nom, matricule, salaire, tempsTravaille, compteur);
+					monMenu::lireInfosSyndique(nom,  matricule,  salaire,  tempsTravaille);
+					employes[compteur] = new Syndique(nom, matricule, salaire, tempsTravaille);
 					compteur++;
 			break;
 			case 2 :
-					nouvelEmploye::lireInfosContractuel(nom, matricule, salaire, tempsTravaille);
-					nouvelEmploye::ajouterContractuel(employes, nom, matricule, salaire, tempsTravaille, compteur);
+					monMenu::lireInfosContractuel(nom, matricule, salaire, tempsTravaille);
+					employes[compteur] = new Contractuel(nom, matricule, salaire, tempsTravaille);
 					compteur++;
 			break;
 			case 3 :
-					nouvelEmploye::lireInfosPonctuel(nom, matricule, salaire);
-					nouvelEmploye::ajouterPonctuel(employes, nom, matricule, salaire, compteur);
+					monMenu::lireInfosPonctuel(nom, matricule, salaire);
+					employes[compteur] = new Ponctuel(nom, matricule, salaire);
 					compteur++;
 			break;
 			case 4 :
-					nouvelEmploye::afficherEmployesInfos(employes, compteur);
+					afficherEmployesInfos(employes, compteur);
 			break;
 			default :
 					std::cout << "Choix inconnu" << std::endl;
@@ -69,13 +69,32 @@ int main(int argc, const char * argv[]) {
 	
 }
 
-private void afficheMenu(){
+void afficheMenu(){
 	std::cout << "Choisissez une option pour : " << std::endl;
 	std::cout << "1. Ajouter un employé syndiqué" << std::endl;
 	std::cout << "2. Ajouter un employé contractuel" << std::endl;
 	std::cout << "3. Ajouter un employé ponctuel" << std::endl;
-	std::cout << "4. afficher le résultat de la paye des employés" << std::endl;
+	std::cout << "4. Afficher la paye des employés" << std::endl;
 	std::cout << "5. Quitter" << std::endl;
 }
 
+void afficherEmployesInfos(Employe* employes[], int compteur){
+	
+	double salaire = 0;
+	double tps = 0;
+	double tvq = 0;
+	
+	for (int i = 0; i < compteur; i++)
+	{
+		salaire = employes[i]->calculerSalaire();
+		tps = Taxes::calculeTPS(salaire);
+		tvq = Taxes::calculeTVQ(salaire);
+		std::cout << employes[i]->getNom() << " " << employes[i]->getMatricule() << std::endl;
+		std::cout << "\tPaie brute de " << salaire << "$" << std::endl;
+		std::cout << "\tImpôts CA de " << tps << "$" << std::endl;
+		std::cout << "\tImpôts QC de " << tvq << "$" << std::endl;
+		std::cout << "\tPaie nette de " << salaire - (tps+tvq) << "$" << std::endl;
+		std::cout << std::endl;
+	}
+}
 

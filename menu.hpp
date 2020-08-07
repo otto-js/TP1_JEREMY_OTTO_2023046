@@ -16,17 +16,12 @@
 #include "ponctuel.hpp"
 #include "taxes.hpp"
 
-class nouvelEmploye{
+class monMenu{
 
 public :
 	static void afficheMenu();
 	static void lireInfosSyndique(std::string& nom, int& matricule, double& salaireHoraire, double& nbrHeuresTravaillees);
 	static void lireInfosContractuel(std::string& nom, int& matricule, double& montantContrat, double& nbrSemainesTravaillees);
 	static void lireInfosPonctuel(std::string& nom, int& matricule, double& montantContrat);
-	static void ajouterSyndique(Employe* employes[], std::string nom, int matricule, double salaireHoraire, double nbrHeuresTravaillees, int compteur);
-	static void ajouterContractuel(Employe* employes[], std::string nom, int matricule, double montantContrat, double nbrSemainesTravaillees, int compteur);
-	static void ajouterPonctuel(Employe* employes[], std::string nom, int matricule, double montantPaye, int compteur);
-	static void afficherEmployesInfos(Employe* employes[], int compteur);
-
 };
 #endif 

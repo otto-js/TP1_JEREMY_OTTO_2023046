@@ -20,8 +20,6 @@ class Employe {
 		string nom;
 		int matricule; //doit être compris entre 10 000 et 99 999 -- comment on fait ça?
 	public :
-		const static double TAUX_TPS;
-		const static double TAUX_TVQ;
 	
 		Employe(string nom, int matricule);
 		

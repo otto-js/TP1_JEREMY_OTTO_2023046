@@ -20,6 +20,4 @@ class Taxes {
 		static double calculeTVQ(double montantATaxer);
 
 };
-
-
-#endif /* taxes_h */
+#endif

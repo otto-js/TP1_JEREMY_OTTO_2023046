@@ -12,6 +12,7 @@
 const double Taxes::TPS = 0.15;
 const double Taxes::TVQ = 0.15;
 
+
 double Taxes::calculeTPS(double montantATaxer) {
 	return montantATaxer * TPS;
 }
