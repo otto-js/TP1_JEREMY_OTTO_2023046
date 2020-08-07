@@ -15,14 +15,15 @@ void monMenu::afficheMenu(){
 	std::cout << "3. Ajouter un employé ponctuel" << std::endl;
 	std::cout << "4. Afficher la paye des employés" << std::endl;
 	std::cout << "5. Quitter" << std::endl;
+	std::cout << "\tVotre choix : ";
 }
 
 void monMenu::lireNomEtMatriculeEmploye(std::string& nom, int& matricule){
-	std::cout << "Entrez le nom de l'employé  : " << std::endl;
+	std::cout << "Entrez le nom de l'employé  : ";
 	std::cin >> nom;
 	
-	std::cout << "Entrez le matricule de l'employé : " << std::endl;
 	do {
+		std::cout << "Entrez le matricule de l'employé : ";
 		std::cin >> matricule;
 		if (matricule < 10000 || matricule > 99999)
 			std::cout << "Le matricule doit être compris entre 10000 et 99999" << std::endl;
@@ -30,36 +31,62 @@ void monMenu::lireNomEtMatriculeEmploye(std::string& nom, int& matricule){
 }
 
  void monMenu::lireInfosSyndique(std::string& nom, int& matricule, double& salaireHoraire, double& heuresTravaillees){
+ 	std::cout << "\nEMPLOYE SYNDIQUÉ" << std::endl;
+ 
 	lireNomEtMatriculeEmploye(nom, matricule);
 	
-	std::cout << "Entrez le salaire horaire : " << std::endl;
+	std::cout << "Entrez le salaire horaire : ";
 	std::cin >> salaireHoraire;
 	
-	std::cout << "Entrez le nombre d'heures travaillées : " << std::endl;
+	std::cout << "Entrez le nombre d'heures travaillées : ";
 	std::cin >> heuresTravaillees;
 	
 	std::cout << std::endl;
 }
 
  void monMenu::lireInfosContractuel(std::string& nom, int& matricule, double& montantContrat, double& semainesTravaillees){
+	std::cout << "\nEMPLOYE CONTRACTUEL" << std::endl;
+ 
 	lireNomEtMatriculeEmploye(nom, matricule);
 	
-	std::cout << "Entrez le montant total du contrat : " << std::endl;
+	std::cout << "Entrez le montant total du contrat : ";
 	std::cin >> montantContrat;
 	
-	std::cout << "Entrez le nombre de semaines travaillées : " << std::endl;
+	std::cout << "Entrez le nombre de semaines travaillées : ";
 	std::cin >> semainesTravaillees;
 	
 	std::cout << std::endl;
 }
 
  void monMenu::lireInfosPonctuel(std::string& nom, int& matricule, double& montantPaye){
+	std::cout << "\nEMPLOYE PONCTUEL" << std::endl;
+ 
 	lireNomEtMatriculeEmploye(nom, matricule);
 	
-	std::cout << "Entrez le montant total payé : " << std::endl;
+	std::cout << "Entrez le montant total payé : ";
 	std::cin >> montantPaye;
 	
 	std::cout << std::endl;
+}
+
+void monMenu::afficherEmployesInfos(Employe* employes[], int compteur){
+	
+	double salaire = 0;
+	double tps = 0;
+	double tvq = 0;
+	
+	for (int i = 0; i < compteur; i++)
+	{
+		salaire = employes[i]->calculeSalaire();
+		tps = Taxes::calculeTPS(salaire);
+		tvq = Taxes::calculeTVQ(salaire);
+		std::cout << employes[i]->getNom() << " " << employes[i]->getMatricule() << std::endl;
+		std::cout << "\tPaie brute de " << salaire << " $" << std::endl;
+		std::cout << "\tImpôts CA de " << tps << " $" << std::endl;
+		std::cout << "\tImpôts QC de " << tvq << " $" << std::endl;
+		std::cout << "\tPaie nette de " << salaire - (tps+tvq) << " $" << std::endl;
+		std::cout << std::endl;
+	}
 }
 
 
