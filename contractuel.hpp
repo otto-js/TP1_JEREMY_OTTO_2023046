@@ -22,10 +22,7 @@ class Contractuel : public Employe
 	public :
 		Contractuel(string nom, int matricule, int montantFixe, int nbreSemaines);
 		
-		virtual ~Contractuel();
-		
 		double calculerSalaire();
 
 };
-
 #endif

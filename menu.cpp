@@ -8,6 +8,14 @@
 #include <iostream>
 #include "menu.hpp"
 
+void monMenu::afficheMenu(){
+	std::cout << "Choisissez une option pour : " << std::endl;
+	std::cout << "1. Ajouter un employé syndiqué" << std::endl;
+	std::cout << "2. Ajouter un employé contractuel" << std::endl;
+	std::cout << "3. Ajouter un employé ponctuel" << std::endl;
+	std::cout << "4. Afficher la paye des employés" << std::endl;
+	std::cout << "5. Quitter" << std::endl;
+}
 
  void monMenu::lireInfosSyndique(std::string& nom, int& matricule, double& salaireHoraire, double& heuresTravaillees){
 	std::cout << "Entrez le nom de l'employé syndiqué : " << std::endl;

@@ -15,12 +15,6 @@
 		this->montantUnique = montantUnique;
 	}
 	
-	Ponctuel::~Ponctuel()
-	{
-		std::cout << "Ponctuel effacé" << std::endl;
-	}
-	
-	//implémenter la méthode calculerSalaire pour Syndique
 	double Ponctuel::calculerSalaire()
 	{
 		return montantUnique;

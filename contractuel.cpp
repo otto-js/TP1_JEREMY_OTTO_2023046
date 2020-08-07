@@ -14,13 +14,7 @@
 		this->nbreSemaines = nbreSemaines;
 	}
 
-	Contractuel::~Contractuel()
+	double Contractuel::calculerSalaire()
 	{
-		std::cout << "Contractuel effacé" << std::endl;
+		return (double)montantFixe / nbreSemaines;
 	}
-	
-			//implémenter la méthode calculerSalaire pour Syndique
-		double Contractuel::calculerSalaire()
-		{
-			return (double)montantFixe / nbreSemaines;
-		}

@@ -15,7 +15,7 @@
 #include "menu.hpp"
 
 
-void afficheMenu();
+
 void afficherEmployesInfos(Employe* employes[], int compteur);
 
 int main(int argc, const char * argv[]) {
@@ -30,7 +30,7 @@ int main(int argc, const char * argv[]) {
 	
 	int choix = 0;
 	
-	afficheMenu();
+	monMenu::afficheMenu();
 	std::cin >> choix;
 	while (choix !=5)
 	{
@@ -57,7 +57,7 @@ int main(int argc, const char * argv[]) {
 			default :
 					std::cout << "Choix inconnu" << std::endl;
 		}
-	afficheMenu();
+	monMenu::afficheMenu();
 	std::cin >> choix;
 	}
 	std::cout << "Au revoir" << std::endl;
@@ -66,16 +66,6 @@ int main(int argc, const char * argv[]) {
 		delete employes[i];
 
 	return 0;
-	
-}
-
-void afficheMenu(){
-	std::cout << "Choisissez une option pour : " << std::endl;
-	std::cout << "1. Ajouter un employé syndiqué" << std::endl;
-	std::cout << "2. Ajouter un employé contractuel" << std::endl;
-	std::cout << "3. Ajouter un employé ponctuel" << std::endl;
-	std::cout << "4. Afficher la paye des employés" << std::endl;
-	std::cout << "5. Quitter" << std::endl;
 }
 
 void afficherEmployesInfos(Employe* employes[], int compteur){

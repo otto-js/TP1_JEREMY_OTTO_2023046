@@ -21,10 +21,6 @@ class Ponctuel : public Employe
 	public :
 		Ponctuel(string nom, int matricule, double montantUnique);
 		
-		virtual ~Ponctuel();
-		
 		double calculerSalaire();
-
 };
-
 #endif

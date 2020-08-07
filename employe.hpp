@@ -29,10 +29,6 @@ class Employe {
 		int getMatricule();
 
 		virtual double calculerSalaire() = 0;
-		
-		/*double calculerTPS(double salaireBrut);
-		double calculerTVQ(double salaireBrut);
-*/
 };
 
 #endif

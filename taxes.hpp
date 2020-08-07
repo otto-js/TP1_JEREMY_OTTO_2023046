@@ -18,6 +18,5 @@ class Taxes {
 	public :
 		static double calculeTPS(double montantATaxer);
 		static double calculeTVQ(double montantATaxer);
-
 };
 #endif
