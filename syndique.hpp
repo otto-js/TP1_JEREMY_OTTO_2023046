@@ -14,16 +14,13 @@
 
 class Syndique : public Employe
 {
-
 	private :
-		double salaireHoraire,
-				heuresTravaillees;
+		double salaireHoraire;
+		double heuresTravaillees;
 	
 	public :
-		Syndique(string nom, int matricule, double salaireHoraire, double heuresTravaillees);
+		Syndique(std::string nom, int matricule, double salaireHoraire, double heuresTravaillees);
 
-		double calculerSalaire();
-
+		double calculeSalaire();
 };
-
 #endif

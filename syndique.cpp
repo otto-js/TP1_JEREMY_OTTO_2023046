@@ -6,24 +6,14 @@
 //  Copyright © 2020 JERERMY LANDIER. All rights reserved.
 //
 
-#include <string>
 #include <iostream>
 #include "syndique.hpp"
 
+	Syndique::Syndique(std::string nom, int matricule, double salaireHoraire, double heuresTravaillees) : Employe(nom, matricule){
+		this->salaireHoraire = salaireHoraire;
+		this->heuresTravaillees = heuresTravaillees;
+	}
 
-		
-
-Syndique::Syndique(string nom, int matricule, double salaireHoraire, double heuresTravaillees) : Employe(nom, matricule)
-{
-	this->salaireHoraire = salaireHoraire;
-	this->heuresTravaillees = heuresTravaillees;
-}
-
-
-		
-double Syndique::calculerSalaire()
-{
-		//employé payé à l'heure
-		//paie pour une semaine définie par un taux horaire et un nombre d'heure travaillées pendant la dernière semaine
+	double Syndique::calculeSalaire(){
 		return this->salaireHoraire * this->heuresTravaillees;
-		}
+	}

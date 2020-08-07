@@ -17,6 +17,8 @@ void monMenu::afficheMenu(){
 	std::cout << "5. Quitter" << std::endl;
 }
 
+
+
  void monMenu::lireInfosSyndique(std::string& nom, int& matricule, double& salaireHoraire, double& heuresTravaillees){
 	std::cout << "Entrez le nom de l'employé syndiqué : " << std::endl;
 	std::cin >> nom;
@@ -37,6 +39,8 @@ void monMenu::afficheMenu(){
 	std::cout << std::endl;
 }
 
+
+
  void monMenu::lireInfosContractuel(std::string& nom, int& matricule, double& montantContrat, double& semainesTravaillees){
 	std::cout << "Entrez le nom de l'employé contractuel : " << std::endl;
 	std::cin >> nom;
@@ -56,6 +60,8 @@ void monMenu::afficheMenu(){
 	
 	std::cout << std::endl;
 }
+
+
 
  void monMenu::lireInfosPonctuel(std::string& nom, int& matricule, double& montantPaye){
 	std::cout << "Entrez le nom de l'employé ponctuel : " << std::endl;

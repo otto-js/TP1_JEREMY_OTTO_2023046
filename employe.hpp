@@ -12,23 +12,20 @@
 #include <stdio.h>
 #include <string>
 
-using namespace std;
-
 class Employe {
 
 	protected :
-		string nom;
+		std::string nom;
 		int matricule;
 	public :
 	
-		Employe(string nom, int matricule);
+		Employe(std::string nom, int matricule);
 		
 		virtual ~Employe();
 		
-		string getNom();
+		std::string getNom();
 		int getMatricule();
 
-		virtual double calculerSalaire() = 0;
+		virtual double calculeSalaire() = 0;
 };
-
 #endif

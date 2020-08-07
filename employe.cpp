@@ -9,18 +9,18 @@
 #include "employe.hpp"
 #include <iostream>
 
-
-	Employe::Employe(string nom, int matricule)
-	{
+	Employe::Employe(std::string nom, int matricule){
 		this->nom = nom;
 		this->matricule = matricule;
 	}
 	
 	Employe::~Employe(){}
 	
-	string Employe::getNom() { return this->nom;}
+	std::string Employe::getNom()
+	{ return this->nom;}
 	
-	int Employe::getMatricule() { return this->matricule;}
+	int Employe::getMatricule()
+	{ return this->matricule;}
 	
 	
 	

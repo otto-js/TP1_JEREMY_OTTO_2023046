@@ -8,13 +8,11 @@
 #include "contractuel.hpp"
 #include <iostream>
 
-	Contractuel::Contractuel(string nom, int matricule, int montantFixe, int nbreSemaines) : Employe(nom, matricule)
-	{
+	Contractuel::Contractuel(std::string nom, int matricule, int montantFixe, int nbreSemaines) : Employe(nom, matricule){
 		this->montantFixe = montantFixe;
 		this->nbreSemaines = nbreSemaines;
 	}
 
-	double Contractuel::calculerSalaire()
-	{
+	double Contractuel::calculeSalaire(){
 		return (double)montantFixe / nbreSemaines;
 	}

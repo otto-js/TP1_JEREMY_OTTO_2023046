@@ -10,12 +10,10 @@
 #include <iostream>
 
 
-	Ponctuel::Ponctuel(string nom, int matricule, double montantUnique) : Employe(nom, matricule)
-	{
+	Ponctuel::Ponctuel(std::string nom, int matricule, double montantUnique) : Employe(nom, matricule){
 		this->montantUnique = montantUnique;
 	}
 	
-	double Ponctuel::calculerSalaire()
-	{
+	double Ponctuel::calculeSalaire(){
 		return montantUnique;
 	}

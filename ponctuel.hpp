@@ -19,8 +19,8 @@ class Ponctuel : public Employe
 		double montantUnique;
 
 	public :
-		Ponctuel(string nom, int matricule, double montantUnique);
+		Ponctuel(std::string nom, int matricule, double montantUnique);
 		
-		double calculerSalaire();
+		double calculeSalaire();
 };
 #endif

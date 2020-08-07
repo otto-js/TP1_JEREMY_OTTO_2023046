@@ -14,8 +14,6 @@
 #include "taxes.hpp"
 #include "menu.hpp"
 
-
-
 void afficherEmployesInfos(Employe* employes[], int compteur);
 
 int main(int argc, const char * argv[]) {
@@ -44,20 +42,32 @@ int main(int argc, const char * argv[]) {
 					}
 					else
 						std::cout << "Plus de place disponible dans le tableau" << std::endl;
-			break;
+					break;
+			
 			case 2 :
-					monMenu::lireInfosContractuel(nom, matricule, salaire, tempsTravaille);
-					employes[compteur] = new Contractuel(nom, matricule, salaire, tempsTravaille);
-					compteur++;
-			break;
+					if (compteur < 250 ){
+						monMenu::lireInfosContractuel(nom, matricule, salaire, tempsTravaille);
+						employes[compteur] = new Contractuel(nom, matricule, salaire, tempsTravaille);
+						compteur++;
+					}
+					else
+						std::cout << "Plus de place disponible dans le tableau" << std::endl;
+					break;
+			
 			case 3 :
-					monMenu::lireInfosPonctuel(nom, matricule, salaire);
-					employes[compteur] = new Ponctuel(nom, matricule, salaire);
-					compteur++;
-			break;
+					if (compteur < 250 ){
+						monMenu::lireInfosPonctuel(nom, matricule, salaire);
+						employes[compteur] = new Ponctuel(nom, matricule, salaire);
+						compteur++;
+					}
+					else
+						std::cout << "Plus de place disponible dans le tableau" << std::endl;
+					break;
+			
 			case 4 :
 					afficherEmployesInfos(employes, compteur);
-			break;
+					break;
+			
 			default :
 					std::cout << "Choix inconnu" << std::endl;
 		}
@@ -80,14 +90,14 @@ void afficherEmployesInfos(Employe* employes[], int compteur){
 	
 	for (int i = 0; i < compteur; i++)
 	{
-		salaire = employes[i]->calculerSalaire();
+		salaire = employes[i]->calculeSalaire();
 		tps = Taxes::calculeTPS(salaire);
 		tvq = Taxes::calculeTVQ(salaire);
 		std::cout << employes[i]->getNom() << " " << employes[i]->getMatricule() << std::endl;
-		std::cout << "\tPaie brute de " << salaire << "$" << std::endl;
-		std::cout << "\tImpôts CA de " << tps << "$" << std::endl;
-		std::cout << "\tImpôts QC de " << tvq << "$" << std::endl;
-		std::cout << "\tPaie nette de " << salaire - (tps+tvq) << "$" << std::endl;
+		std::cout << "\tPaie brute de " << salaire << " $" << std::endl;
+		std::cout << "\tImpôts CA de " << tps << " $" << std::endl;
+		std::cout << "\tImpôts QC de " << tvq << " $" << std::endl;
+		std::cout << "\tPaie nette de " << salaire - (tps+tvq) << " $" << std::endl;
 		std::cout << std::endl;
 	}
 }

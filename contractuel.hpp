@@ -20,9 +20,9 @@ class Contractuel : public Employe
 			nbreSemaines;
 
 	public :
-		Contractuel(string nom, int matricule, int montantFixe, int nbreSemaines);
+		Contractuel(std::string nom, int matricule, int montantFixe, int nbreSemaines);
 		
-		double calculerSalaire();
+		double calculeSalaire();
 
 };
 #endif
