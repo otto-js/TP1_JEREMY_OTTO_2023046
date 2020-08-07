@@ -18,13 +18,16 @@
 
 class monMenu{
 
-public :
-	//affichage options menu
-	static void afficheMenu();
-	
-	//lecture informations fournies par utilisateur pour employés syndiqué, contractuel et ponctuel
-	static void lireInfosSyndique(std::string& nom, int& matricule, double& salaireHoraire, double& nbrHeuresTravaillees);
-	static void lireInfosContractuel(std::string& nom, int& matricule, double& montantContrat, double& nbrSemainesTravaillees);
-	static void lireInfosPonctuel(std::string& nom, int& matricule, double& montantContrat);
+	public :
+		//affichage options menu
+		static void afficheMenu();
+		
+		//lecture informations fournies par utilisateur pour employés syndiqué, contractuel et ponctuel
+		static void lireInfosSyndique(std::string& nom, int& matricule, double& salaireHoraire, double& nbrHeuresTravaillees);
+		static void lireInfosContractuel(std::string& nom, int& matricule, double& montantContrat, double& nbrSemainesTravaillees);
+		static void lireInfosPonctuel(std::string& nom, int& matricule, double& montantContrat);
+		
+	private :
+		static void lireNomEtMatriculeEmploye(std::string& nom, int& matricule);
 };
 #endif 

@@ -17,64 +17,46 @@ void monMenu::afficheMenu(){
 	std::cout << "5. Quitter" << std::endl;
 }
 
-
-
- void monMenu::lireInfosSyndique(std::string& nom, int& matricule, double& salaireHoraire, double& heuresTravaillees){
-	std::cout << "Entrez le nom de l'employé syndiqué : " << std::endl;
+void monMenu::lireNomEtMatriculeEmploye(std::string& nom, int& matricule){
+	std::cout << "Entrez le nom de l'employé  : " << std::endl;
 	std::cin >> nom;
 	
-	std::cout << "Entrez le matricule de l'employé syndiqué : " << std::endl;
+	std::cout << "Entrez le matricule de l'employé : " << std::endl;
 	do {
 		std::cin >> matricule;
 		if (matricule < 10000 || matricule > 99999)
 			std::cout << "Le matricule doit être compris entre 10000 et 99999" << std::endl;
 	}while (matricule < 10000 || matricule > 99999);
+}
+
+ void monMenu::lireInfosSyndique(std::string& nom, int& matricule, double& salaireHoraire, double& heuresTravaillees){
+	lireNomEtMatriculeEmploye(nom, matricule);
 	
-	std::cout << "Entrez le salaire horaire de l'employé syndiqué : " << std::endl;
+	std::cout << "Entrez le salaire horaire : " << std::endl;
 	std::cin >> salaireHoraire;
 	
-	std::cout << "Entrez le nombre d'heures travaillées de l'employé syndiqué : " << std::endl;
+	std::cout << "Entrez le nombre d'heures travaillées : " << std::endl;
 	std::cin >> heuresTravaillees;
 	
 	std::cout << std::endl;
 }
 
-
-
  void monMenu::lireInfosContractuel(std::string& nom, int& matricule, double& montantContrat, double& semainesTravaillees){
-	std::cout << "Entrez le nom de l'employé contractuel : " << std::endl;
-	std::cin >> nom;
+	lireNomEtMatriculeEmploye(nom, matricule);
 	
-	std::cout << "Entrez le matricule de l'employé contractuel : " << std::endl;
-	do {
-		std::cin >> matricule;
-		if (matricule < 10000 || matricule > 99999)
-			std::cout << "Le matricule doit être compris entre 10000 et 99999" << std::endl;
-	}while (matricule < 10000 || matricule > 99999);
-	
-	std::cout << "Entrez le montant du contrat de l'employé contractuel : " << std::endl;
+	std::cout << "Entrez le montant total du contrat : " << std::endl;
 	std::cin >> montantContrat;
 	
-	std::cout << "Entrez le nombre de semaines travaillées par l'employé contractuel : " << std::endl;
+	std::cout << "Entrez le nombre de semaines travaillées : " << std::endl;
 	std::cin >> semainesTravaillees;
 	
 	std::cout << std::endl;
 }
 
-
-
  void monMenu::lireInfosPonctuel(std::string& nom, int& matricule, double& montantPaye){
-	std::cout << "Entrez le nom de l'employé ponctuel : " << std::endl;
-	std::cin >> nom;
+	lireNomEtMatriculeEmploye(nom, matricule);
 	
-	std::cout << "Entrez le matricule de l'employé ponctuel : " << std::endl;
-	do {
-		std::cin >> matricule;
-		if (matricule < 10000 || matricule > 99999)
-			std::cout << "Le matricule doit être compris entre 10000 et 99999" << std::endl;
-	}while (matricule < 10000 || matricule > 99999);
-	
-	std::cout << "Entrez le montant payé à l'employé ponctuel : " << std::endl;
+	std::cout << "Entrez le montant total payé : " << std::endl;
 	std::cin >> montantPaye;
 	
 	std::cout << std::endl;
