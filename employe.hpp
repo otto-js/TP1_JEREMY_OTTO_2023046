@@ -23,8 +23,8 @@ class Employe {
 		
 		virtual ~Employe();
 		
-		std::string getNom();
-		int getMatricule();
+		std::string getNom() const;
+		int getMatricule() const;
 
 		virtual double calculeSalaire() = 0;
 };

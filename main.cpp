@@ -24,8 +24,8 @@ int main(int argc, const char * argv[]) {
 	double salaire = 0;
 	double tempsTravaille = 0;
 	
-  Equipe mesEmployes;
-
+	Equipe mesEmployes;
+  
 	int choix = 0;
 
 	monMenu::afficheMenu();

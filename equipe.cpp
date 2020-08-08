@@ -22,6 +22,19 @@
     }
   }
   
+//Je sais que je devrais redéfinir le constructeur par copie et l'opérateur d'assignation puisque ma classe a un tableau de pointeurs, mais je n'ai pas réussi.
+
+ //J'ai essayé de redéfinir l'opérateur  car j'ai un tableau de pointeurs dans ma classe mais ça ne marche pas mon affaire
+ /* Equipe Equipe::operator= (const Equipe& equipeACopier) {
+		Equipe temp;
+		for (int i = 0; i < equipeACopier.compteur; i++){
+		temp.listeEmployes[i] = equipeACopier.listeEmployes[i];
+		std::cout << temp.listeEmployes[i] << std::endl;
+		 }
+		 std::cout << " est passé par là" << std::endl;
+		 return temp;
+	}*/
+  
   void Equipe::ajouteSyndique(std::string nom, int matricule, double salaireHoraire, double heuresTravaillees) {
     if (this->compteur < 250){
       listeEmployes[this->compteur] = new Syndique(nom, matricule, salaireHoraire, heuresTravaillees);
@@ -51,7 +64,7 @@
 
   void Equipe::afficheTableauPleinMessage() {
 	std::cout << "Limtite d'espace disponible dans le tableau atteinte" << std::endl;
-}
+  }
 
   void Equipe::afficherEmployesInfos(){
     
@@ -72,15 +85,4 @@
       std::cout << std::endl;
     }
   }
-
-
-  /*Comme j'ai un tableau de pointeurs j'ai essayé de redéfinir mon constructeur par copie,
-   mais je ne suis vraiment pas sûr de mon affaire alors je commente mais je garde pour revisiter
-   
-		  Equipe::Equipe(const Equipe& equipeACopier){
-		  for (int i = 0; i < compteur; i++)
-			*(this->listeEmployes[i]) = *(equipeACopier.listeEmployes[i]);
-		  }*/
-
-	//Je n'ai pas réussi à surcharger l'opérateur d'assignation.
 

@@ -24,7 +24,7 @@ private :
 
 public :
   Equipe();
-  Equipe(const Equipe& equipeACopier);
+  //Equipe operator=(const Equipe& equipeACopier) ;
   ~Equipe();
   
 
@@ -37,6 +37,7 @@ public :
   void afficheTableauPleinMessage();
 
   void afficherEmployesInfos();
+  
 };
 
 #endif /* equipe_hpp */

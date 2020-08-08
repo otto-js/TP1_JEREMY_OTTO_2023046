@@ -16,10 +16,10 @@
 	
 	Employe::~Employe(){}
 	
-	std::string Employe::getNom()
+	std::string Employe::getNom() const
 	{ return this->nom;}
 	
-	int Employe::getMatricule()
+	int Employe::getMatricule() const
 	{ return this->matricule;}
 	
 	
