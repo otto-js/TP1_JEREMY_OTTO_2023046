@@ -26,8 +26,6 @@ class monMenu{
 		static void lireInfosSyndique(std::string& nom, int& matricule, double& salaireHoraire, double& nbrHeuresTravaillees);
 		static void lireInfosContractuel(std::string& nom, int& matricule, double& montantContrat, double& nbrSemainesTravaillees);
 		static void lireInfosPonctuel(std::string& nom, int& matricule, double& montantContrat);
-
-		static void afficherEmployesInfos(Employe* employes[], int compteur);
 		
 	private :
 		static void lireNomEtMatriculeEmploye(std::string& nom, int& matricule);

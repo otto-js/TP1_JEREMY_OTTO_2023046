@@ -69,25 +69,6 @@ void monMenu::lireNomEtMatriculeEmploye(std::string& nom, int& matricule){
 	std::cout << std::endl;
 }
 
-void monMenu::afficherEmployesInfos(Employe* employes[], int compteur){
-	
-	double salaire = 0;
-	double tps = 0;
-	double tvq = 0;
-	
-	for (int i = 0; i < compteur; i++)
-	{
-		salaire = employes[i]->calculeSalaire();
-		tps = Taxes::calculeTPS(salaire);
-		tvq = Taxes::calculeTVQ(salaire);
-		std::cout << employes[i]->getNom() << " " << employes[i]->getMatricule() << std::endl;
-		std::cout << "\tPaie brute de " << salaire << " $" << std::endl;
-		std::cout << "\tImpôts CA de " << tps << " $" << std::endl;
-		std::cout << "\tImpôts QC de " << tvq << " $" << std::endl;
-		std::cout << "\tPaie nette de " << salaire - (tps+tvq) << " $" << std::endl;
-		std::cout << std::endl;
-	}
-}
 
 
 
