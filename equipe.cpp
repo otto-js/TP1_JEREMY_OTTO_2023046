@@ -27,12 +27,26 @@
  //J'ai essayé de redéfinir l'opérateur  car j'ai un tableau de pointeurs dans ma classe mais ça ne marche pas mon affaire
  /* Equipe Equipe::operator= (const Equipe& equipeACopier) {
 		Equipe temp;
+		//idée 1
+		
 		for (int i = 0; i < equipeACopier.compteur; i++){
+		
 		temp.listeEmployes[i] = equipeACopier.listeEmployes[i];
 		std::cout << temp.listeEmployes[i] << std::endl;
 		 }
 		 std::cout << " est passé par là" << std::endl;
 		 return temp;
+		 
+		 
+		 //idée 2 :
+		 //- créer un nouvel objet type Employe : impossible puisque abstrait
+		 //- je ne trouve pas de mot clé similaire à instanceof je Java pour savoir de quel type est l'objet à créer et le dupliquer dans le pointeur du tableau
+		
+		for (int i = 0; i < equipeACopier.compteur; i++){
+			temp = new Employe(equipeACopier.listeEmployes[i].getNom());
+		
+		}
+		 
 	}*/
   
   void Equipe::ajouteSyndique(std::string nom, int matricule, double salaireHoraire, double heuresTravaillees) {

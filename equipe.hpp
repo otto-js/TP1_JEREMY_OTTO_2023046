@@ -24,7 +24,7 @@ private :
 
 public :
   Equipe();
-  //Equipe operator=(const Equipe& equipeACopier) ;
+  //Equipe operator=(const Equipe& equipeACopier);
   ~Equipe();
   
 
