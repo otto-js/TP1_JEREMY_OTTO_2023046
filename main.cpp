@@ -16,6 +16,7 @@
 #include "equipe.hpp"
 
 void afficheTableauPleinMessage();
+void verifieValeurChoix(int choix);
 
 int main(int argc, const char * argv[]) {
 
@@ -30,6 +31,8 @@ int main(int argc, const char * argv[]) {
 
 	monMenu::afficheMenu();
 	std::cin >> choix;
+	verifieValeurChoix(choix);
+
 	while (choix !=5)
 	{
 		switch (choix)
@@ -59,12 +62,21 @@ int main(int argc, const char * argv[]) {
 
 	monMenu::afficheMenu();
 	std::cin >> choix;
+	verifieValeurChoix(choix);
 	}
 	std::cout << "Au revoir" << std::endl;
 
 	return 0;
 }
 
+void verifieValeurChoix(int choix){
+	while(std::cin.fail()) {
+	std::cout << "Veuillez choisir une option entre 1 et 5" << std::endl;
+	std::cin.clear();
+	std::cin.ignore(256, '\n');
+	std::cin >> choix;
+	}
+}
 
 
 
